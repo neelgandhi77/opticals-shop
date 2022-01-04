@@ -1,7 +1,6 @@
-from flask import Flask, g, render_template, request, redirect
-from datetime import datetime, time
+from flask import Flask, g, render_template, request
 import pyrebase
-import re
+
 app = Flask(__name__)
 
 
