@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block fname %} Home{% endblock fname %}
+{% block body %}
+
+<div class="container my-3">
+  <h2>Add Entry</h2>
+
+  <div align="right">
+    Previous ID: <font color="red">{{id_display}}</font>
+
+  </div>
+  <form action="/" method="POST">
+    <div class="mb-3">
+      <label for="fname" class="form-label">First Name</label>
+      <input type="text" class="form-control" name="fname" id="fname" aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+      <label for="mname" class="form-label">Middle Name</label>
+      <input type="text" class="form-control" name="mname" id="mname" aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+      <label for="lname" class="form-label">Last Name</label>
+      <input type="text" class="form-control" name="lname" id="lname" aria-describedby="emailHelp" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="mb" class="form-label">Mb no<Nav></Nav></label>
+      <input type="text" class="form-control" name="mb" id="mb" aria-describedby="emailHelp" required>
+    </div>
+
+    <button type="submit" class="btn btn-dark">Submit</button>
+    <button type="reset" class="btn btn-dark">Reset</button>
+  </form>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+
+
+{% endblock body %}

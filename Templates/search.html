@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block fname %} Home{% endblock fname %}
+{% block body %}
+<div class="container my-3">
+  <h2>Search</h2>
+  <form action="/search" method="POST">
+    <div class="mb-3">
+      <label for="id" class="form-label">ENTER ID</label>
+      <input type="text" class="form-control" name="id" id="id" aria-describedby="emailHelp" required>
+    </div>
+
+    <button type="submit" class="btn btn-dark">Submit</button>
+    <button type="reset" class="btn btn-dark">Reset</button>
+
+    <div class="mb-3">
+      {% if data|length == 0 %}
+      <div class="alert alert-dark my-2" role="alert">
+        No Entries Found !!!!
+      </div>
+
+      {% else %}
+      <div class="alert alert-dark my-2" role="alert">
+        Recorded Details
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+
+            <th scope="col">First Name</th>
+            <th scope="col">Middle Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Mobile No.</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for i in data %}
+          <td>
+            {{i}}
+          </td>
+          {% endfor %}
+
+        </tbody>
+      </table>
+  </form>
+</div>
+
+<diV>
+  <form action="/update" method="POST">
+
+    <button type="submit" class="btn btn-dark">Update</button>
+
+  </form>
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock body %}

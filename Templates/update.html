@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block fname %} Home{% endblock fname %}
+{% block body %}
+
+<div class="container my-3">
+    <form action="/" method="POST">
+        <div class="mb-3">
+            <label for="f1name" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="fname" id="fname" aria-describedby="emailHelp" value={{fname}}
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="m1name" class="form-label">Middle Name</label>
+            <input type="text" class="form-control" name="mname" id="mname" aria-describedby="emailHelp" value={{mname}}
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="l1name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="lname" id="lname" aria-describedby="emailHelp" value={{lname}}
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label for="mb1" class="form-label">Mb no<Nav></Nav></label>
+            <input type="text" class="form-control" name="mb" id="mb" aria-describedby="emailHelp" value={{mb}}
+                required>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Update</button>
+      
+    </form>
+</div>
+
+{% endblock body %}
