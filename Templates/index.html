@@ -6,26 +6,29 @@
   <h2>Add Entry</h2>
 
   <div align="right">
-    Previous ID: <font color="red">{{id_display}}</font>
+    <font color="red">{{id_display}}</font>
 
   </div>
   <form action="/" method="POST">
     <div class="mb-3">
       <label for="fname" class="form-label">First Name</label>
-      <input type="text" class="form-control" name="fname" id="fname" aria-describedby="emailHelp" required>
+      <input type="text" class="form-control" name="fname" id="fname" aria-describedby="emailHelp" pattern="^[A-Za-z]+$"
+        required>
     </div>
     <div class="mb-3">
       <label for="mname" class="form-label">Middle Name</label>
-      <input type="text" class="form-control" name="mname" id="mname" aria-describedby="emailHelp" required>
+      <input type="text" class="form-control" name="mname" id="mname" aria-describedby="emailHelp" pattern="^[A-Za-z]+$"
+        required>
     </div>
     <div class="mb-3">
       <label for="lname" class="form-label">Last Name</label>
-      <input type="text" class="form-control" name="lname" id="lname" aria-describedby="emailHelp" required>
+      <input type="text" class="form-control" name="lname" id="lname" aria-describedby="emailHelp" pattern="^[A-Za-z]+$"
+        required>
     </div>
-
     <div class="mb-3">
       <label for="mb" class="form-label">Mb no<Nav></Nav></label>
-      <input type="text" class="form-control" name="mb" id="mb" aria-describedby="emailHelp" required>
+      <input type="text" class="form-control" name="mb" id="mb" aria-describedby="emailHelp"
+        pattern="^([+]\d{2})?\d{10}$" required>
     </div>
 
     <button type="submit" class="btn btn-dark">Submit</button>

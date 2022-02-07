@@ -7,27 +7,28 @@
         <div class="mb-3">
             <label for="f1name" class="form-label">First Name</label>
             <input type="text" class="form-control" name="fname" id="fname" aria-describedby="emailHelp" value={{fname}}
-                required>
+                pattern="^[A-Za-z]+$" required>
         </div>
         <div class="mb-3">
             <label for="m1name" class="form-label">Middle Name</label>
             <input type="text" class="form-control" name="mname" id="mname" aria-describedby="emailHelp" value={{mname}}
-                required>
+                pattern="^[A-Za-z]+$" required>
         </div>
         <div class="mb-3">
             <label for="l1name" class="form-label">Last Name</label>
             <input type="text" class="form-control" name="lname" id="lname" aria-describedby="emailHelp" value={{lname}}
-                required>
+                pattern="^[A-Za-z]+$" required>
         </div>
+
 
         <div class="mb-3">
             <label for="mb1" class="form-label">Mb no<Nav></Nav></label>
             <input type="text" class="form-control" name="mb" id="mb" aria-describedby="emailHelp" value={{mb}}
-                required>
+            pattern="^([+]\d{2})?\d{10}$"   required>
         </div>
 
         <button type="submit" class="btn btn-dark">Update</button>
-      
+
     </form>
 </div>
 
