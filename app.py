@@ -37,7 +37,7 @@ def hello_world():
         child1 = flag[10:]
         if(id != "" and len(mb) != 0):
             db.child(id).child(child1).update(
-                {'First  Name': fname, 'Middle Name': mname, 'Last   Name': lname, 'Mobile     ': str(mb)})
+                {'First Name': fname, 'Middle Name': mname, 'Last Name': lname, 'Mobile': str(mb)})
         flag = 0
         return render_template('index.html')
     try:
@@ -58,7 +58,7 @@ def hello_world():
 
             if(title != "" and len(mb) != 0):
                 db.child(title).child(child1).set(
-                    {'First  Name': fname, 'Middle Name': mname, 'Last   Name': lname, 'Mobile     ': str(mb), 'ydata     ': str(mb)+child1})
+                    {'First Name': fname, 'Middle Name': mname, 'Last Name': lname, 'Mobile': str(mb), 'ydata': str(mb)+child1})
 
             return render_template('index.html')
 
@@ -90,17 +90,18 @@ def update(ydata):
         #id = searchlist[-1]
         id = ydata[0:10]
         child1 = ydata[10:]
-        print(id, child1)
-        #data = db.child(id).child("").get().val().values()
-        data = db.child(id).child(child1).get().val().values()
-        data = list(data)
-        temp = []
-        for i in data:
-            temp.append(i)
+
+        data = db.child(id).child(child1).get().val()
+        data = dict(data)
+
+        #temp = []
+        # for i in data:
+        # temp.append(i)
         global flag
         flag = ydata
         # db.child(id).remove()
-        return render_template('update.html', fname=temp[0], lname=temp[1], mname=temp[2], mb=temp[3])
+        return render_template('update.html', fname=data['First Name'], lname=data['Last Name'], mname=data['Middle Name'], mb=data['Mobile'])
+
     except:
         return render_template('alert.html')
 

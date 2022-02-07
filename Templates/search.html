@@ -12,71 +12,68 @@
     <button type="submit" class="btn btn-dark">Submit</button>
     <button type="reset" class="btn btn-dark">Reset</button>
   </form>
-    <div class="mb-3">
+  <div class="mb-3">
 
-      {% if data|length == 0 %}
-      <div class="alert alert-dark my-2" role="alert">
-        No Entries Found !!!!
-      </div>
+    {% if data|length == 0 %}
+    <div class="alert alert-dark my-2" role="alert">
+      No Entries Found !!!!
+    </div>
 
-      {% else %}
+    {% else %}
 
-      <div class="alert alert-dark my-2" role="alert">
-        Recorded Details
-      </div>
-      <table class="table">
-        <thead>
-          <tr>
+    <div class="alert alert-dark my-2" role="alert">
+      Recorded Details
+    </div>
 
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Middle Name</th>
-            <th scope="col">Mobile No.</th>
-            <th scope="col">Actions</th>
+    <table class="table">
+      <thead>
+        <tr>
 
-          </tr>
-        </thead>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Middle Name</th>
+          <th scope="col">Mobile No.</th>
+          <th scope="col">Actions</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
         {% for dict_item in data %}
-        <tbody>
-        
-          
+        {% for value in dict_item.values() %}
 
-          {% for value in dict_item.values() %}
+        <td>
+          {{value}}
 
-          <td>
-            {{value}}
-          </td>
+        </td>
 
-          {% endfor %}
-
-          {% set ydata=[] %}
-          {% for value in dict_item.values() %}
-          {{ ydata.append(value)}}
-          {% endfor %}
-          {% set ydata=ydata[-1] %}
-          <td>
-            <form action="/update/{{ydata}}" method="POST">
-
-              <button class="btn btn-dark">{{ydata}}</button>
-
-            </form>
-
-          </td>
-          
-         
-          
-        </tbody>
 
         {% endfor %}
-      </table>
+
+        {% set ydata=[] %}
+        {% for value in dict_item.values() %}
+        {% set ydata=ydata.append(value) %}
+        {% endfor %}
+        <td>
+          <form action="/update/{{ydata[-1]}}" method="POST">
+            <button class="btn btn-dark">Update</button>
+        </td>
+
+        </form>
+
+
+      </tbody>
+
+      {% endfor %}
+    </table>
 
 
 
-</div>
+  </div>
 
 
 
-{% endif %}
+  {% endif %}
 
 </div>
 
