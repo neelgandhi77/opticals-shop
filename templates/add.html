@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %} Add {% endblock title %}
+{% block body %}
+
+<div class="mx-3">Last customer: <font color="red">{{lc}}</font>
+
+
+</div>
+<center>
+  <form action="/add" class="w-full max-w-lg bg-grey shadow-lg rounded px-8 pt-6 pb-8 mb-4 my-3" method="POST">
+    <div class="flex flex-wrap h-full mx-3 mb-6 ">
+
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label for="fname" class="form-label ">First Name</label>
+        <input type="text"
+          class="form-control bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          name="fname" id="fname" value="" aria-describedby="emailHelp" pattern="^[A-Za-z]+$" required>
+      </div>
+      <div class="w-full md:w-1/2 px-3">
+
+        <label for="lname" class="form-label">Last Name</label>
+        <input type="text"
+          class="form-control bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          name="lname" id="lname" value="" aria-describedby="emailHelp" pattern="^[A-Za-z]+$" required>
+      </div>
+
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label for="lname" class="form-label">Left Eye</label>
+        <input type="text"
+          class="form-control bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          name="leye" id="leye" value="" aria-describedby="emailHelp">
+      </div>
+
+      <div class="w-full md:w-1/2 px-3">
+        <label for="mb" class="form-label">Right Eye<Nav></Nav></label>
+        <input type="text"
+          class="form-control form-control bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          name="reye" id="reye" value="" aria-describedby="emailHelp">
+      </div>
+
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label for="lname" class="form-label">Product</label>
+        <input type="text"
+          class="form-control bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          name="pname" id="pname" value="" aria-describedby="emailHelp">
+      </div>
+
+      <div class="w-full md:w-1/2 px-3">
+        <label for="mb" class="form-label">Mb no<Nav></Nav></label>
+        <input type="text"
+          class="form-control form-control bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          name="mb" id="mb" aria-describedby="emailHelp" value="" pattern="^([+]\d{2})?\d{10}$" required>
+      </div>
+
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 my-4">
+
+        <button type="submit"
+          class="btn btn-success shadow focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Submit
+        </button>
+      </div>
+      <div class="w-full md:w-1/2 px-3 my-4">
+        <button type="reset"
+          class="btn btn-danger shadow focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Reset
+        </button>
+      </div>
+
+
+    </div>
+
+  </form>
+</center>
+{% endblock body %}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, -scale=1.0" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- Bootsttrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+  <title>Dashboard </title>
+  <!-- For mobile phones  -->
+  <style>
+    @media only screen and (max-width: 768px) {
+      #mobile {
+        max-width: 65px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark w-auto" id="mobile">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+          <a href="/dashboard" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-5 d-none d-sm-inline">Optics</span>
+          </a>
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
+            <li>
+              <a href="/dashboard" data-bs-toggle="collapse" class="nav-link px-0 text-white align-middle">
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none  d-sm-inline">Dashboard</span> </a>
+            </li>
+            <li>
+              <a href="/add" class="nav-link text-white px-0 align-middle">
+                <i class="bi bi-file-plus"></i> <span class="ms-1 d-none d-sm-inline">Add</span></a>
+            </li>
+            <li>
+              <a href="/search" data-bs-toggle="collapse" class="nav-link text-white px-0 align-middle ">
+                <i class="bi bi-search"></i> <span class="ms-1 d-none d-sm-inline">Search</span></a>
+            </li>
+            <li>
+              <a href="/sales" data-bs-toggle="collapse" class="nav-link text-white px-0 align-middle">
+                <i class="bi bi-graph-up"></i> <span class="ms-1 d-none d-sm-inline">Visualization</span> </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white px-0 align-middle">
+                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Clients</span> </a>
+            </li>
+            <li>
+              <a data-bs-toggle="collapse" class="nav-link text-white px-0 align-middle active bg-dark"><button
+                  class="btn-dark border-0 " onclick="window.location='http://localhost:5000/dropsession'"
+                  type="submit"> <i class="bi bi-box-arrow-in-left"></i><span
+                    class="ms-1 d-none d-sm-inline">Logout</span></button>
+              </a>
+            </li>
+          </ul>
+          <hr>
+        </div>
+      </div>
+
+      <div class="col py-3">
+        <h4 align="left">Dashboard</h4>
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <div class="card bg-primary text-white h-100">
+              <div class="card-body py-5">RayBon</div>
+              <div class="card-footer d-flex">
+                View Details
+                <span class="ms-auto">
+                  <a class="text-light" href="https://startuptalky.com/top-eyewear-brands-in-india/"> <i
+                      class="bi bi-chevron-right"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card bg-warning text-dark h-100">
+              <div class="card-body py-5 text-light">Prada</div>
+              <div class="card-footer d-flex text-light">
+                View Details
+                <span class="ms-auto">
+                  <a class="text-light" href="https://startuptalky.com/top-eyewear-brands-in-india/"><i
+                      class="bi bi-chevron-right"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card bg-success text-white h-100">
+              <div class="card-body py-5">Persol</div>
+              <div class="card-footer d-flex">
+                View Details
+                <span class="ms-auto">
+                  <a class="text-light" href="https://startuptalky.com/top-eyewear-brands-in-india/"> <i
+                      class="bi bi-chevron-right"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card bg-danger text-white h-100">
+              <div class="card-body py-5">Tom Ford</div>
+              <div class="card-footer d-flex">
+                View Details
+                <span class="ms-auto">
+                  <a class="text-light" href="https://startuptalky.com/top-eyewear-brands-in-india/"> <i
+                      class="bi bi-chevron-right"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="ratio ratio-4x3">
+            <iframe src="https://datastudio.google.com/embed/reporting/def43f47-6901-47a2-8af1-f348e566cd38/page/SltlC"
+              frameborder="0" style="border:0" style="max-width: 100%;height: 100%;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<!-- Avoid Redundant Entries -->
+<script type="text/javascript">
+  function preback() { window.history.forward(); }
+  setTimeout("preback()", 0);
+  window.onunload = function () { null };
+</script>

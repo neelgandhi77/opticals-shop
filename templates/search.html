@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %} Search {% endblock title %}
+{% block body %}
+<center>
+  <div class="container my-10">
+
+    <form action="/search" class="w-full max-w-lg bg-grey shadow-lg rounded px-4 pt-6 pb-8 mb-1 my-1" method="POST">
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <input type="text" class="form-control" name="id" id="id" aria-describedby="emailHelp" value=""
+          Placeholder="Enter Mobile Number" required>
+      </div>
+      <div class="w-full md:w-2/3 px-3 my-4">
+        <button type="submit" class="btn btn-dark mx-1">Submit</button>
+        <button type="reset" class="btn btn-dark mx-1">Reset</button>
+    </form>
+    <form action="/add">
+      <button type="submit" class="btn btn-dark mx-1 my-2">Back</button>
+    </form>
+  </div>
+
+  <br>
+
+
+  <div class="mb-3">
+
+    {% if data|length == 0 %}
+    <div class="alert alert-dark max-w-lg bg-grey shadow-lg w-35  rounded px-4 pt-2 pb-2 mb-1 my-2" role="alert">
+      <b>No Entries Found !!!!</b>
+    </div>
+
+    <form action="/add">
+      <button class="btn btn-success my-2">Add New</button>
+    </form>
+
+  </div>
+
+  {% else %}
+
+  <div class="alert alert-dark my-2" role="alert">
+    Recorded Details
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Mobile No.</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for dict_item in data %}
+      {% for value in dict_item.values() %}
+      <td>
+        {{value}}
+
+      </td>
+      {% endfor %}
+
+
+      {% set ydata=[] %}
+      {% for value in dict_item.values() %}
+      {% set ydata=ydata.append(value) %}
+      {% endfor %}
+      <td class="m-0">
+        <form action="/update/{{ydata[-1]}}" method="POST">
+          <button class="btn btn-dark my-1">Update</button>
+        </form>
+        <form action="/delete/{{ydata[-1]}}" method="POST">
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </td>
+    </tbody>
+    </form>
+    {% endfor %}
+  </table>
+  {% endif %}
+</center>
+{% endblock body %}
